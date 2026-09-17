@@ -111,6 +111,21 @@ This claim is weaker than MVUEH on provenance, though not on arithmetic:
 The decryption is checkable while its provenance is not. Those are separate
 questions and this repo answers only the first.
 
+## Test vectors
+
+Neither claim ships a test vector, so the ADFGVX implementation is also
+checked against a worked example by a third party: Anil Andro's Spanish
+history of Painvin and the 1918 ciphers encrypts `SE ESPERA ATAQUE
+INMINENTE` under the key `GEORGEORWELL`, by hand, with every intermediate
+grid printed
+([archived page](https://web.archive.org/web/20210212215335/https://sites.google.com/site/anilandro/06120-adfgx-01)).
+
+That example is worth more than its size suggests. Its last row is short, so
+it exercises the one rule the 1918 message actually depends on: which columns
+carry the extra character. Get that wrong and the digraphs shift, and no key
+will ever read. It is also ADFGX, the 5x5 version, so supporting it keeps the
+square size a parameter rather than an assumption.
+
 ## What is not checked here
 
 - MVUEH's 43,016-batch search, its SAT cross-check, and its competing-key

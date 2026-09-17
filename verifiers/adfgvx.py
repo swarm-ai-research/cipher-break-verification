@@ -11,6 +11,16 @@ Decryption undoes the columnar transposition first, then the square.
 from __future__ import annotations
 
 HEADINGS = "ADFGVX"
+HEADINGS_ADFGX = "ADFGX"  # the five-letter version used from March 1918
+
+
+def headings_for(square: list[str]) -> str:
+    """ADFGX (5x5, i/j share a cell) and ADFGVX (6x6, with digits)."""
+    if len(square) == 5:
+        return HEADINGS_ADFGX
+    if len(square) == 6:
+        return HEADINGS
+    raise ValueError("square must be 5x5 (ADFGX) or 6x6 (ADFGVX)")
 
 
 def key_order(keyword: str) -> list[int]:
@@ -50,15 +60,17 @@ def undo_transposition(ciphertext: str, keyword: str) -> str:
 
 
 def decrypt(ciphertext: str, keyword: str, square: list[str]) -> str:
-    """Decrypt `ciphertext` under a transposition `keyword` and 6x6 `square`."""
+    """Decrypt `ciphertext` under a transposition `keyword` and a `square`."""
     ciphertext = "".join(ciphertext.split()).upper()
-    if set(ciphertext) - set(HEADINGS):
-        raise ValueError("ciphertext may only contain the letters ADFGVX")
-    if len(square) != 6 or any(len(row) != 6 for row in square):
-        raise ValueError("square must be 6x6")
+    headings = headings_for(square)
+    square = [row.upper() for row in square]
+    if any(len(row) != len(square) for row in square):
+        raise ValueError("square must be square")
+    if set(ciphertext) - set(headings):
+        raise ValueError(f"ciphertext may only contain the letters {headings}")
 
     pairs = undo_transposition(ciphertext, keyword.upper())
     return "".join(
-        square[HEADINGS.index(pairs[i])][HEADINGS.index(pairs[i + 1])]
+        square[headings.index(pairs[i])][headings.index(pairs[i + 1])]
         for i in range(0, len(pairs), 2)
     )

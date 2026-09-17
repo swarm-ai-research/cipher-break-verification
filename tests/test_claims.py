@@ -112,3 +112,17 @@ def test_a_wrong_adfgvx_keyword_destroys_the_german():
         ADFGVX["ciphertext"], "TRUPPENVERSCHIEBUNX", ADFGVX["key"]["square"]
     )
     assert "SEWASTOPOL" not in wrong
+
+
+def test_adfgx_worked_example_from_a_third_party():
+    """A five-letter ADFGX example by Anil Andro, worked out by hand.
+
+    Neither claim above supplies a test vector, so the transposition rule —
+    which columns carry the extra character when the last row is short — is
+    checked here against someone else's arithmetic.
+
+    https://web.archive.org/web/20210212215335/https://sites.google.com/site/anilandro/06120-adfgx-01
+    """
+    square = ["DYCSE", "RMUHG", "ZXBVK", "PWQFA", "LTOIN"]
+    ciphertext = "GAFXXXGXAXDXADDXAGXXAGXXFGAGAAAXXXXXXXGDXDGGDA"
+    assert adfgvx.decrypt(ciphertext, "GEORGEORWELL", square) == "SEESPERAATAQUEINMINENTE"
