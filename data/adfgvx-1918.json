@@ -1,0 +1,34 @@
+{
+  "id": "adfgvx-1918",
+  "cipher": "ADFGVX",
+  "message": "German radio message transmitted 27 November 1918 (Childs, p. 217; RICHI-170)",
+  "claim": {
+    "by": "prinz, with GPT-6 Astra",
+    "dated": "2026-09-17",
+    "post": "https://www.prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio",
+    "novelty": "unconfirmed: the post says 'to my knowledge' unsolved, and no custodian has marked it solved"
+  },
+  "ciphertext_source": {
+    "url": "https://www.prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio",
+    "held_by": "J. Rives Childs, The History and Principles of German Military Ciphers 1914-1918, p. 217",
+    "note": "transcribed by eye from the page scan in the post; see README caveats"
+  },
+  "key": {
+    "keyword": "TRUPPENVERSCHIEBUNG",
+    "keyword_source": "Childs pp. 214-215; documented as in use from 9 December 1918, twelve days after this message's date",
+    "square": [
+      "TRUPE4",
+      "NVSC2H",
+      "7I8B1G",
+      "6A0D3F",
+      "5J9KLM",
+      "OQWXYZ"
+    ],
+    "square_note": "the scan carries handwritten corrections. Two cells were read wrong on our first pass and the German fixed them: row G column F is the digit 0, row X column A is the letter O (Childs underlines one of the pair). The cell read here as 4 (row A, column X) is the one HMS Canterbury's log settles; its partner cell (row F, column F) then takes 8."
+  },
+  "ciphertext": "DXXXGGVXAXADXVDGDAAADGXAGAVDGVFAFAADFFFGXFVXDDVDVFGFVVVAADXGAAVAVAAXDGVADDDDVADGFAGVVGVVGDAVXFFDAADVFFAXGVDVDDAGDVFXAAVAADDAFFDFAAGXVAAGAFXDADFFXAVDAADADXXAADVAXVVADFDVAA",
+  "expected_plaintext": "EINENGLISCHERKREUZEREINLIEGXSEWASTOPOLXS4STENXEINGESCHWADERDERXALLIIERTENFOLGT26STENX",
+  "reading": "Ein englischer Kreuzer einlieg(end) Sewastopol [2]4sten. Ein Geschwader der Alliierten folgt 26sten.",
+  "english": "An English cruiser docked at Sevastopol on the 24th. An allied squadron follows on the 26th.",
+  "external_corroboration": "HMS Canterbury's log places the ship at Sevastopol on 24 November 1918, with an allied squadron on the 26th (cited in the post)."
+}

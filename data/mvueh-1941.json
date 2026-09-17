@@ -1,0 +1,27 @@
+{
+  "id": "mvueh-1941",
+  "cipher": "Enigma I",
+  "message": "German Army message Nr. 172, 10 July 1941, identifier MVUEH",
+  "claim": {
+    "by": "Carter Leffen, with GPT-6 Astra and parallel agents",
+    "dated": "2026-09-14",
+    "exhibit": "https://mvueh-enigma-solved.carterl.chatgpt.site/",
+    "report": "https://mvueh-enigma-solved.carterl.chatgpt.site/downloads/completion-report.md"
+  },
+  "ciphertext_source": {
+    "url": "https://cryptocellar.org/bgac/g-army-july-1941.html",
+    "held_by": "Frode Weierud's CryptoCellar archive, not the solver",
+    "note": "published received transcription, copied verbatim, no letters chosen"
+  },
+  "indicator": {"window": "GTA", "enciphered_key": "KCI", "expected_body_window": "RWD"},
+  "key": {
+    "rotors": ["II", "V", "III"],
+    "reflector": "B",
+    "rings": "HMF",
+    "plugboard": "AC BE DG FH KN MO PR SU TV XZ"
+  },
+  "ciphertext": "IDEVSARMCCNQTATYEVFCDBZGGSMXWLPSYWZYTCBSWURRTBZCVGODVJUSLSOOMJQJZSXSEBZPEYMDNXJFTC",
+  "expected_plaintext": "BRCEUZANGAKEDESMARSVWEGESXFEFINDEMIQINXROSTNOWROSENOWXSOFORTFUNKANTWORTXWASCHBBPCH",
+  "reading": "B[i]tte um Angabe des Marschweges. Befinde mich in Rosenow Rosenow. Sofort Funkantwort. Waschbusch.",
+  "english": "Please give the route of march. I am in Rosenow, Rosenow. Reply by radio at once."
+}
