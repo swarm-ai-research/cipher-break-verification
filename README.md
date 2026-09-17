@@ -142,7 +142,7 @@ square size a parameter rather than an assumption.
 ## Layout
 
     verifiers/enigma.py   Enigma I: rotors I-V, reflectors B and C, plugboard
-    verifiers/adfgvx.py   ADFGVX: columnar transposition and 6x6 square
+    verifiers/adfgvx.py   ADFGX and ADFGVX: columnar transposition and square
     data/*.json           one claim per file: key, ciphertext, source, expected text
     tests/test_claims.py  the checks, including the ones that must fail
     check.py              run everything and print the plaintext
